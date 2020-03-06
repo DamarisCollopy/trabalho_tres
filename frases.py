@@ -26,20 +26,23 @@ def meu_switch():
 def inserir_texto() :
 
     global text
-    sair = "sair"
+#Variaivel sair usanda para encerrar programa
+    sair = "Sair"
 # Inserir texto e validação obrigando digitar o texto
     while(True) :
         text = input("Escreva o seu texto : \n")
         if len(text) == 0 :
             print("Erro digite um texto!")
             continue
-        elif text in sair :
+        elif sair in text :
             print("Fim do programa")
+            break
         else :
             return
 
 
 def procurar_texto() :
+#Procurar palavras dentro do texto
 
     global text
 
@@ -47,7 +50,7 @@ def procurar_texto() :
     print(text.find(input("Devolve se a palavra existe")))
 
     nome = input("Entre com a palavra a ser procurada :")
-
+# Para achar palavras dentro do codigo e devolver a palavra ou se nao existe informa que nao existe
     if nome in text :
         print(nome)
     else :
