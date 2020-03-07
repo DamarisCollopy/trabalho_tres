@@ -1,7 +1,9 @@
-
+#Criei uma variavel que é vista pelo programa todo, varivel global
 global lista
 lista = []
 
+#fiz um switch para escolher as opções desejadas
+#dentro do switch fiz um loop com while criei uma situcção usando uma booleana onde sempre será verdadeiro, quebro o codigo com o break usado na opção 3
 
 def meu_switch():
 
@@ -25,6 +27,8 @@ def meu_switch():
         else:
             print("opcao inválida")
 
+#Fiz novamente um loop com while, como nao existe um do/while no python fiz um usando o true, com isso sempre a varivel z vai ser executado
+# criei um mini menu, caso queira criar uma nova lista
 def cadastro() :
 
     global lista
@@ -43,12 +47,16 @@ def cadastro() :
         else :
             return
 
+# Imprime a lista
 def imprime_lista() :
 
     global lista
 
     print(lista)
 
+#Edita e apaga usando o loop um do/while forçado
+# Opção com um mini menu
+# Fiz um if que procura a palavra se ela existe e remove ela
 def editar_apagar() :
 
     global lista
@@ -72,6 +80,6 @@ def editar_apagar() :
             print(" Processo encerrado !")
             return
 
-
+# Main para executar o programa, chama o switch
 if __name__ == "__main__":
     print (meu_switch())

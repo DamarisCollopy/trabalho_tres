@@ -1,10 +1,13 @@
 
-from itertools import chain
+
 global nome
 global altura
 global lista
 altua = []
 nome = []
+
+#fiz um switch para escolher as opções desejadas
+#dentro do switch fiz um loop com while criei uma situcção usando uma booleana onde sempre será verdadeiro, quebro o codigo com o break usado na opção 3
 
 def meu_switch():
 
@@ -28,7 +31,8 @@ def meu_switch():
         else:
             print("opcao inválida")
 
-
+#Fiz novamente um loop com while, como nao existe um do/while no python fiz um usando o true, com isso sempre a varivel z vai ser executado
+# criei um mini menu, caso queira inserir mais alunos
 def inserir_dados():
 
     global nome
@@ -51,14 +55,14 @@ def inserir_dados():
         else :
             return
 
-
+# Usei o zip porque criei duas listas e queria imprimir os dois como se os dados estivessem lincados
 def imprima_lista() :
     text = ''
     for n, a in zip(nome, altura):
         text += '\nO Nome do aluno {} e sua altura {}'.format(n, a)
     print(text)
 
-
+# Calculei a media e entreguei tambem a maior altura e menor altura
 def calculo_media():
 
     global altura
@@ -71,7 +75,7 @@ def calculo_media():
     print("Media :" + "" +str(media))
     imprima_lista()
 
-
+#Main para rodar o programa
 if __name__ == "__main__":
     print (meu_switch())
 
