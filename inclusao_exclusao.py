@@ -11,18 +11,15 @@ def meu_switch():
         z = int(input("Menu : "
                       "\n 0 : Cadastro de itens"
                       "\n 1 : Imprimir Lista "
-                      "\n 3 : Editar lista"
-                      "\n 4 : Apagar lista"
-                      "\n 5 : Sair \n"))
+                      "\n 2 : Editar ou apagar lista"
+                      "\n 3 : Sair \n"))
         if z < x :
             cadastro()
         elif z == x :
             imprime_lista()
-        elif z == 3 :
-            editar()
-        elif z == 4 :
-            apagar()
-        elif z ==  5:
+        elif z == 2 :
+            editar_apagar()
+        elif z ==  3:
             print("Programa encerrado")
             break
         else:
@@ -50,26 +47,30 @@ def imprime_lista() :
 
     global lista
 
-    print("Lista  :" + str(lista))
+    print(lista)
 
-def editar() :
-
-
-    chave = input("Entre com o produto a ser deletado :")
-    if chave in lista:
-        print("Produto deletado da lista " + chave)
-        lista.remove(chave)
-    else:
-        print("Produto não encontrado")
-
-def apagar() :
+def editar_apagar() :
 
     global lista
 
-    lista.clear()
-    print("Lista  :" + str(lista))
-
-
+    x = 1
+    while(True) :
+        z = int(input("\n 1 Editar Lista, \n 2 Apagar Lista  \n 3 Sair \n"))
+        if z == x :
+            chave = input("Entre com o produto a ser alterado :")
+            if  len([x for x in lista if x == chave]) :
+                lista.remove(chave)
+                print("Produto deletado da lista " + chave)
+                break
+            else :
+                print("Produto não encontrado")
+        elif z == 2 :
+            lista.clear()
+            print(lista)
+            break
+        else :
+            print(" Processo encerrado !")
+            return
 
 
 if __name__ == "__main__":

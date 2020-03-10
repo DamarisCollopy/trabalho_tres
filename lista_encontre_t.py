@@ -10,10 +10,11 @@ t.append("4")
 t.append("5")
 t.append("5")
 print(t)
-
+#Opção para inserir o numero na posiçao 0
 t.insert(0,"0")
 print(t)
 
+# Encontra o numero na lista
 def encontre() :
 
     n = input("Insira o numero a ser encontrado : ")

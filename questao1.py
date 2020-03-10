@@ -9,6 +9,7 @@ lista.append("5")
 print(lista)
 print(len(lista))
 
+# Criei uma funçao que busca na lista se existe e apaga, se caso não encontrado informa ao usuario e se o numero não existe
 def encontrar():
 
     n = input("Insira o numero a ser deletado : ")
