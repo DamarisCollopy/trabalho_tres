@@ -11,20 +11,24 @@ def meu_switch():
         z = int(input("Menu : "
                       "\n 0 : Cadastro de itens"
                       "\n 1 : Imprimir Lista "
-                      "\n 2 : Editar ou apagar lista"
-                      "\n 3 : Sair \n"))
+                      "\n 3 : Editar lista"
+                      "\n 4 : Apagar lista"
+                      "\n 5 : Sair \n"))
         if z < x :
             cadastro()
         elif z == x :
             imprime_lista()
-        elif z == 2 :
-            editar_apagar()
-        elif z ==  3:
+        elif z == 3 :
+            editar()
+        elif z == 4 :
+            apagar()
+        elif z ==  5:
             print("Programa encerrado")
             break
         else:
             print("opcao inválida")
 
+# Cadastro para criar e incluir mais listas, usei um while para simular um do/while usando o true, faz validação usando um mini menu e os elif para testar as condições
 def cadastro() :
 
     global lista
@@ -43,35 +47,32 @@ def cadastro() :
         else :
             return
 
+#Imprime o conteudo dentro da lista
 def imprime_lista() :
 
     global lista
 
-    print(lista)
+    print("Lista  :" + str(lista))
 
-def editar_apagar() :
+#Edita a lista procura se exite aquele produto na lista se sim ele apaga apenas o item selecionado
+def editar() :
+
+
+    chave = input("Entre com o produto a ser deletado :")
+    if chave in lista:
+        print("Produto deletado da lista " + chave)
+        lista.remove(chave)
+    else:
+        print("Produto não encontrado")
+
+#Apaga a lista toda
+def apagar() :
 
     global lista
 
-    x = 1
-    while(True) :
-        z = int(input("\n 1 Editar Lista, \n 2 Apagar Lista  \n 3 Sair \n"))
-        if z == x :
-            chave = input("Entre com o produto a ser alterado :")
-            if  len([x for x in lista if x == chave]) :
-                lista.remove(chave)
-                print("Produto deletado da lista " + chave)
-                break
-            else :
-                print("Produto não encontrado")
-        elif z == 2 :
-            lista.clear()
-            print(lista)
-            break
-        else :
-            print(" Processo encerrado !")
-            return
+    lista.clear()
+    print("Lista  :" + str(lista))
 
-
+#Main para rodar o programa
 if __name__ == "__main__":
     print (meu_switch())
