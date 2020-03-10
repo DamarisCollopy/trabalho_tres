@@ -55,7 +55,6 @@ def imprime_lista() :
 def editar() :
 
 
-
     chave = input("Entre com o produto a ser deletado :")
     if chave in lista:
         print("Produto deletado da lista " + chave)
